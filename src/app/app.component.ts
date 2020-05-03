@@ -1,3 +1,4 @@
+import { Todo } from './../models/todo.models';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,16 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  public todos: any[] = [];
+  public todos: Todo[] = [];
   public title: string = 'Minhas tarefas';
 
   constructor() {
-    this.todos.push('passear com o doguinho');
-    this.todos.push('ir ao mercado');
-    this.todos.push('cortar o cabelo');
-
-    this.todos.push(2020);
-    this.todos.push(new Date());
+    this.todos.push( new Todo(1,'Passear com o doguinho',false));
+    this.todos.push( new Todo(2,'ir ao mercado',false));
+    this.todos.push(new Todo(3,'cortar o cabelo',true));
   }
 
 }
